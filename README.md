@@ -1,3 +1,5 @@
+<img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" width="100px" height="auto" />
+
 # 💼 NLP2SQL avec Mistral Large 2
 
 ![Mistral](https://img.shields.io/badge/Mistral%20AI-Large%202-blue?logo=academia&style=flat-square)
