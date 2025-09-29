@@ -1,5 +1,9 @@
 # 💼 NLP2SQL avec Mistral Large 2
 
+![Mistral](https://img.shields.io/badge/Mistral%20AI-Large%202-blue?logo=academia&style=flat-square)
+![MySQL](https://img.shields.io/badge/Database-MySQL-blue?logo=mysql&style=flat-square)
+![Gradio](https://img.shields.io/badge/UI-Gradio-orange?logo=python&style=flat-square)
+
 Ce projet démontre l’intégration d’un **agent IA Mistral (Mistral Large 2)** avec une base de données MySQL d’entreprise, permettant d’interroger les données en **langage naturel** et d’obtenir automatiquement des requêtes SQL exécutées en temps réel.
 
 ---
