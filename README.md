@@ -37,6 +37,29 @@ Une **procédure stockée** fournit des statistiques de progression par projet.
 
 ---
 
+---
+
+## 🔎 Fonctionnement interne
+
+Le pipeline NLP2SQL repose sur 4 étapes principales :
+
+1. **Entrée utilisateur (langage naturel)**  
+   L’utilisateur saisit une question en texte libre (ex. *« Quels projets sont terminés en 2025 ? »*).
+
+2. **Traduction NLP → SQL**  
+   La fonction `query_mistral_agent` envoie la question à l’API Mistral.  
+   L’agent IA renvoie une requête SQL encapsulée entre balises `<SQL>...</SQL>`, qui est extraite automatiquement par le script.
+
+3. **Exécution sur la base MySQL**  
+   La fonction `execute_sql` se connecte à la base `entreprise`, exécute la requête générée et récupère les résultats (colonnes + lignes).
+
+4. **Affichage structuré**  
+   La fonction `nlp2sql` orchestre l’ensemble : elle affiche la requête SQL générée en Markdown et présente les résultats dans un **DataFrame Pandas** intégré à l’interface Gradio.
+
+👉 En résumé : *Question en langage naturel → Requête SQL → Résultats concrets en tableau*.
+
+---
+
 ## 📂 Arborescence du dépôt
 ```
 NLP2SQL_project/
