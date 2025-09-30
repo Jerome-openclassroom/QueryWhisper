@@ -36,6 +36,30 @@ A **stored procedure** provides statistics on project progression.
 
 ---
 
+---
+
+## 🔎 Internal Workflow
+
+The NLP2SQL pipeline is built around 4 main steps:
+
+1. **User input (natural language)**  
+   The user types a free-text question (e.g., *“Which projects were completed in 2025?”*).
+
+2. **Translation NLP → SQL**  
+   The `query_mistral_agent` function sends the question to the Mistral API.  
+   The AI agent returns an SQL query wrapped between `<SQL>...</SQL>` tags, which is automatically extracted by the script.
+
+3. **Execution on the MySQL database**  
+   The `execute_sql` function connects to the `entreprise` database, runs the generated query, and retrieves both columns and rows.
+
+4. **Structured output**  
+   The `nlp2sql` function orchestrates the whole pipeline: it displays the generated SQL query in Markdown and renders the results as a **Pandas DataFrame** within the Gradio interface.
+
+👉 In short: *Natural language question → SQL query → Concrete results in a table*.
+
+---
+
+
 ## 📂 Repository Structure
 ```
 NLP2SQL_project/
